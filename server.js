@@ -3,7 +3,11 @@ const path=require('path');
 const http=require('http');
 const socketio=require('socket.io');
 
+const bodyParser = require('body-parser');
 const app=express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname,'/public')));
 const server=http.createServer(app);
 const io=socketio(server);
@@ -31,6 +35,10 @@ io.on('connection',(socket)=>{
     socket.on('answer',(answer)=>{
         socket.broadcast.emit('answer',answer);//ovov svima
         console.log("answer");
+    });
+    socket.on('mouseIncomeing',(coordinates)=>{
+        socket.broadcast.emit('mouseSend',coordinates);
+        console.log("mouse incomeing");
     });
 });
 
