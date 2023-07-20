@@ -10,3 +10,4 @@ na jednom uređaju odemo na offer gdje dobijemo mogucnost share screen, a na dru
 
 
 za laser treba pokrenuti drawPoint.py skriptu na računaru koji djeli ekran
+https://youtu.be/B0Tm_2ju6xE
